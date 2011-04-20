@@ -1,4 +1,4 @@
-package mpicbg.imglib.ui;
+package net.imglib2.ui;
 
 import java.awt.Adjustable;
 import java.awt.Color;
@@ -20,15 +20,15 @@ import javax.swing.JScrollBar;
 import javax.swing.border.TitledBorder;
 
 import loci.formats.FormatException;
-import mpicbg.imglib.converter.Converter;
-import mpicbg.imglib.display.ARGBScreenImage;
-import mpicbg.imglib.exception.IncompatibleTypeException;
-import mpicbg.imglib.img.Img;
-import mpicbg.imglib.io.ImgOpener;
-import mpicbg.imglib.io.ImgPlus;
-import mpicbg.imglib.type.NativeType;
-import mpicbg.imglib.type.numeric.ARGBType;
-import mpicbg.imglib.type.numeric.RealType;
+import net.imglib2.converter.Converter;
+import net.imglib2.display.ARGBScreenImage;
+import net.imglib2.exception.IncompatibleTypeException;
+import net.imglib2.img.Img;
+import net.imglib2.io.ImgOpener;
+import net.imglib2.io.ImgPlus;
+import net.imglib2.type.NativeType;
+import net.imglib2.type.numeric.ARGBType;
+import net.imglib2.type.numeric.RealType;
 
 public class CompositeImgPanel extends JPanel {
 

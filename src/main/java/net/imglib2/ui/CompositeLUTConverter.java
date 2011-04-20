@@ -25,52 +25,44 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package mpicbg.imglib.ui;
+package net.imglib2.ui;
 
-import mpicbg.imglib.converter.Converter;
-import mpicbg.imglib.display.AbstractLinearRange;
-import mpicbg.imglib.type.numeric.ARGBType;
-import mpicbg.imglib.type.numeric.RealType;
+import java.awt.Color;
+import net.imglib2.converter.Converter;
+import net.imglib2.display.AbstractLinearRange;
+import net.imglib2.type.numeric.ARGBType;
+import net.imglib2.type.numeric.RealType;
 
 /**
- * 
+ * Used to create a composite multi-channel image (used by CompositeXYProjector)
+ * Accumulates the RGB values in the output/target image. 
  *
  * @author Stephan Saalfeld <saalfeld@mpi-cbg.de>
+ * @author Grant B. Harris
  */
-public class CompositeRGBConverter< R extends RealType< R > > 
-extends AbstractLinearRange implements Converter< R, ARGBType >
+public class CompositeLUTConverter< R extends RealType< R > > extends AbstractLinearRange implements Converter< R, ARGBType >
 {
-	final protected int band;
+	Color[] colors = null;
 	
-	public CompositeRGBConverter()
+	public CompositeLUTConverter()
 	{
 		super();
-		band = 0;
 	}
 	
-	public CompositeRGBConverter( final double min, final double max, final int band )
+	public CompositeLUTConverter( final double min, final double max, final Color[] colors)
 	{
 		super( min, max );
-		this.band = band;
+		this.colors = colors;
 	}
+	
 	
 	@Override
 	public void convert( final R input, final ARGBType output )
 	{
 		final double a = input.getRealDouble();
 		final int b = Math.min( 255, roundPositive( Math.max( 0, ( ( a - min ) / scale * 255.0 ) ) ) );
-		
-		int shift = 8 * band;
-		final int argb = (b  >> shift) & 0xff;
-
-		//	red(value >> 16) & 0xff;
-		//	green(value >> 8) & 0xff;
-		//	blue value & 0xff;
-	
-		//final int argb = 0xff000000 | ( ( ( b << 8 ) | b ) << 8 ) | b;
-		
-		//output.set( argb );
-		
+		Color color = colors[b];
+		final int argb = ARGBType.rgba(color.getRed(),color.getGreen(), color.getBlue(), 0xff);
 		output.add(new ARGBType(argb));
 	}
 }

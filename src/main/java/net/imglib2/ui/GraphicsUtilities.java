@@ -1,4 +1,4 @@
-package mpicbg.imglib.ui;
+package net.imglib2.ui;
 
 /*
  * $Id: GraphicsUtilities.java,v 1.1 2006/11/05 15:40:51 gfx Exp $

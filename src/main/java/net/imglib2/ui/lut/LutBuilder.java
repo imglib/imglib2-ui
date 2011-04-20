@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package mpicbg.imglib.ui.lut;
+package net.imglib2.ui.lut;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,7 +15,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import mpicbg.imglib.ui.GraphicsUtilities;
+import net.imglib2.ui.GraphicsUtilities;
 
 /**
  *

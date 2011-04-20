@@ -25,16 +25,16 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package mpicbg.imglib.ui;
+package net.imglib2.ui;
 
-import mpicbg.imglib.Cursor;
-import mpicbg.imglib.Localizable;
-import mpicbg.imglib.Positionable;
-import mpicbg.imglib.RandomAccess;
-import mpicbg.imglib.RandomAccessible;
-import mpicbg.imglib.IterableInterval;
-import mpicbg.imglib.converter.Converter;
-import mpicbg.imglib.display.Projector;
+import net.imglib2.Cursor;
+import net.imglib2.Localizable;
+import net.imglib2.Positionable;
+import net.imglib2.RandomAccess;
+import net.imglib2.RandomAccessible;
+import net.imglib2.IterableInterval;
+import net.imglib2.converter.Converter;
+import net.imglib2.display.Projector;
 
 /**
  * 

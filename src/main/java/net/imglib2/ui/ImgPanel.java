@@ -1,4 +1,4 @@
-package mpicbg.imglib.ui;
+package net.imglib2.ui;
 
 import java.awt.Adjustable;
 import java.awt.Dimension;
@@ -19,15 +19,15 @@ import javax.swing.JScrollBar;
 import javax.swing.border.TitledBorder;
 
 import loci.formats.FormatException;
-import mpicbg.imglib.display.ARGBScreenImage;
-import mpicbg.imglib.display.RealARGBConverter;
-import mpicbg.imglib.display.XYProjector;
-import mpicbg.imglib.exception.IncompatibleTypeException;
-import mpicbg.imglib.io.ImgOpener;
-import mpicbg.imglib.io.ImgPlus;
-import mpicbg.imglib.type.NativeType;
-import mpicbg.imglib.type.numeric.ARGBType;
-import mpicbg.imglib.type.numeric.RealType;
+import net.imglib2.display.ARGBScreenImage;
+import net.imglib2.display.RealARGBConverter;
+import net.imglib2.display.XYProjector;
+import net.imglib2.exception.IncompatibleTypeException;
+import net.imglib2.io.ImgOpener;
+import net.imglib2.io.ImgPlus;
+import net.imglib2.type.NativeType;
+import net.imglib2.type.numeric.ARGBType;
+import net.imglib2.type.numeric.RealType;
 
 public class ImgPanel extends JPanel {
 

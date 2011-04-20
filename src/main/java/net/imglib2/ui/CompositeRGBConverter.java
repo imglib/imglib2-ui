@@ -25,45 +25,52 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package mpicbg.imglib.ui;
+package net.imglib2.ui;
 
-import java.awt.Color;
-import mpicbg.imglib.converter.Converter;
-import mpicbg.imglib.display.AbstractLinearRange;
-import mpicbg.imglib.type.numeric.ARGBType;
-import mpicbg.imglib.type.numeric.RealType;
+import net.imglib2.converter.Converter;
+import net.imglib2.display.AbstractLinearRange;
+import net.imglib2.type.numeric.ARGBType;
+import net.imglib2.type.numeric.RealType;
 
 /**
  * 
  *
  * @author Stephan Saalfeld <saalfeld@mpi-cbg.de>
  */
-public class RealLUTConverter< R extends RealType< R > > extends AbstractLinearRange implements Converter< R, ARGBType >
+public class CompositeRGBConverter< R extends RealType< R > > 
+extends AbstractLinearRange implements Converter< R, ARGBType >
 {
-	Color[] colors = null;
+	final protected int band;
 	
-	public RealLUTConverter()
+	public CompositeRGBConverter()
 	{
 		super();
+		band = 0;
 	}
 	
-	public RealLUTConverter( final double min, final double max, final Color[] colors)
+	public CompositeRGBConverter( final double min, final double max, final int band )
 	{
 		super( min, max );
-		this.colors = colors;
+		this.band = band;
 	}
-	
 	
 	@Override
 	public void convert( final R input, final ARGBType output )
 	{
 		final double a = input.getRealDouble();
 		final int b = Math.min( 255, roundPositive( Math.max( 0, ( ( a - min ) / scale * 255.0 ) ) ) );
-		Color color = colors[b];
-		final int argb = ARGBType.rgba(color.getRed(),color.getGreen(), color.getBlue(), 0xff);
-		//final int argb = 0xff000000 | ( ( ( b << 8 ) | b ) << 8 ) | b;
-		output.set( argb );
 		
-		//output.add(new ARGBType(argb));
+		int shift = 8 * band;
+		final int argb = (b  >> shift) & 0xff;
+
+		//	red(value >> 16) & 0xff;
+		//	green(value >> 8) & 0xff;
+		//	blue value & 0xff;
+	
+		//final int argb = 0xff000000 | ( ( ( b << 8 ) | b ) << 8 ) | b;
+		
+		//output.set( argb );
+		
+		output.add(new ARGBType(argb));
 	}
 }

@@ -1,4 +1,4 @@
-package mpicbg.imglib.ui.lut;
+package net.imglib2.ui.lut;
 
 //==============================================================================
 // OCS ColorRGB SCALE Class
