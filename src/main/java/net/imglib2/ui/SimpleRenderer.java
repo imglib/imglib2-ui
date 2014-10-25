@@ -157,6 +157,6 @@ public class SimpleRenderer< A extends AffineGet & Concatenable< AffineGet > > e
 		transformType.set( sourceToScreen, viewerTransform );
 		sourceToScreen.concatenate( source.getSourceTransform() );
 
-		return RealViews.constantAffine( img, sourceToScreen );
+		return RealViews.affine( img, sourceToScreen );
 	}
 }

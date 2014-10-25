@@ -198,6 +198,6 @@ public class MultiResolutionRenderer< A extends AffineSet & AffineGet & Concaten
 		sourceToScreen.concatenate( viewerTransform );
 		sourceToScreen.concatenate( source.getSourceTransform() );
 
-		return RealViews.constantAffine( img, sourceToScreen );
+		return RealViews.affine( img, sourceToScreen );
 	}
 }
