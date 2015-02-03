@@ -53,9 +53,19 @@ final public class PainterThread extends Thread
 
 	public PainterThread( final Paintable paintable )
 	{
+		this( null, "PainterThread", paintable );
+	}
+
+	public PainterThread( final ThreadGroup group, final Paintable paintable )
+	{
+		this( group, "PainterThread", paintable );
+	}
+
+	public PainterThread( final ThreadGroup group, final String name, final Paintable paintable )
+	{
+		super( group, name );
 		this.paintable = paintable;
 		this.pleaseRepaint = false;
-		this.setName( "PainterThread" );
 	}
 
 	@Override
