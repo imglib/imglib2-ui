@@ -38,6 +38,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -201,6 +202,9 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 
 		if ( MouseWheelListener.class.isInstance( handler ) )
 			addMouseWheelListener( ( MouseWheelListener ) handler );
+
+		if ( FocusListener.class.isInstance( handler ) )
+			addFocusListener( ( FocusListener ) handler );
 	}
 
 	/**
@@ -225,6 +229,9 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 
 		if ( MouseWheelListener.class.isInstance( handler ) )
 			removeMouseWheelListener( ( MouseWheelListener ) handler );
+
+		if ( FocusListener.class.isInstance( handler ) )
+			removeFocusListener( ( FocusListener ) handler );
 	}
 
 	/**
