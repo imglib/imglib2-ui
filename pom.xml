@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>imglib2-ui</artifactId>
-	<version>2.0.0-beta-30-SNAPSHOT</version>
+	<version>2.0.0-beta-30</version>
 
 	<name>ImgLib2 UI</name>
 	<description>Interactive image visualization using ImgLib2.</description>
@@ -17,7 +17,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/imglib/imglib2-ui</connection>
 		<developerConnection>scm:git:git@github.com:imglib/imglib2-ui</developerConnection>
-		<tag>HEAD</tag>
+		<tag>imglib2-ui-2.0.0-beta-30</tag>
 		<url>https://github.com/imglib/imglib2-ui</url>
 	</scm>
 	<issueManagement>
