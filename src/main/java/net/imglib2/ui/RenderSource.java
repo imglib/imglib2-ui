@@ -54,7 +54,7 @@ import net.imglib2.ui.util.InterpolatingSource;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public interface RenderSource< T, A >
 {

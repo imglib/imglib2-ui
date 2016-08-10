@@ -66,7 +66,7 @@ import net.imglib2.ui.util.GuiUtil;
  * {@link TransformListener} to be notified about viewer transformation changes
  * made by the user.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  * 
  * @param <A>
  *            transform type

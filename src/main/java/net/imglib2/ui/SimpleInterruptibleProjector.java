@@ -58,7 +58,7 @@ import net.imglib2.ui.util.StopWatch;
  * @param <B>
  *            pixel type of the target {@link RandomAccessibleInterval}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  * @author Stephan Saalfeld
  */
 public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleProjector< A, B >

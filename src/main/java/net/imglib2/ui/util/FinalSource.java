@@ -48,7 +48,7 @@ import net.imglib2.ui.RenderSource;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class FinalSource< T, A > implements RenderSource< T, A >
 {

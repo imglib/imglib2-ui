@@ -48,7 +48,7 @@ import net.imglib2.type.numeric.ARGBType;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class SimpleRenderer< A extends AffineGet & Concatenable< AffineGet > > extends AbstractSimpleRenderer< A >
 {

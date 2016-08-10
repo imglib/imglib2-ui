@@ -48,7 +48,7 @@ import net.imglib2.type.numeric.ARGBType;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  * @author Stephan Saalfeld
  */
 public class MultiResolutionRenderer< A extends AffineSet & AffineGet & Concatenable< AffineGet > > extends AbstractMultiResolutionRenderer< A >

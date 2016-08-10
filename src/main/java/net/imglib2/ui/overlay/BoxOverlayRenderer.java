@@ -47,7 +47,7 @@ import net.imglib2.util.Intervals;
  * {@link OverlayRenderer} showing a transformed box (interval + transform) that
  * represents the source that is shown in the viewer.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class BoxOverlayRenderer implements OverlayRenderer, TransformListener< AffineTransform3D >
 {

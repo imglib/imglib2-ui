@@ -46,7 +46,7 @@ import net.imglib2.ui.util.FinalSource;
 /**
  * Interactive viewer for a 2D {@link RealRandomAccessible}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class InteractiveRealViewer2D< T > extends InteractiveRealViewer< AffineTransform2D, InteractiveDisplayCanvasComponent< AffineTransform2D > >
 {

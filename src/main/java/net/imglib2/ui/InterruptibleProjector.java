@@ -42,7 +42,7 @@ import net.imglib2.display.projector.Projector;
  * rendering can be interrupted, in which case {@link #map()} will return false.
  * Also, the rendering time for the last {@link #map()} can be queried.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  * @author Stephan Saalfeld
  */
 public interface InterruptibleProjector

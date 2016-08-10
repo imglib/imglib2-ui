@@ -49,7 +49,7 @@ import net.imglib2.ui.OverlayRenderer;
  * output window.
  * 
  * @author Stephan Saalfeld
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class LogoPainter implements OverlayRenderer
 {

@@ -48,7 +48,7 @@ import net.imglib2.ui.util.FinalSource;
 /**
  * Interactive viewer for a 3D {@link RealRandomAccessible}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class InteractiveRealViewer3D< T > extends InteractiveRealViewer< AffineTransform3D, InteractiveDisplayCanvasComponent< AffineTransform3D > >
 {

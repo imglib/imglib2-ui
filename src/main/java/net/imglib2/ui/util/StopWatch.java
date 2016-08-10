@@ -39,7 +39,7 @@ package net.imglib2.ui.util;
  * {@link System#nanoTime()}, such that the stop time can never be earlier than
  * the start time.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class StopWatch
 {

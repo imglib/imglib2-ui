@@ -53,7 +53,7 @@ import net.imglib2.ui.util.GuiUtil;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public abstract class AbstractSimpleRenderer< A extends AffineGet & Concatenable< AffineGet > > extends AbstractRenderer< A >
 {

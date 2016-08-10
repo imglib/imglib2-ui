@@ -52,7 +52,7 @@ import net.imglib2.converter.Converter;
  * @param <B>
  *            pixel type of the target {@link RandomAccessibleInterval}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  * @author Stephan Saalfeld
  */
 abstract public class AbstractInterruptibleProjector< A, B > extends AbstractInterval implements InterruptibleProjector

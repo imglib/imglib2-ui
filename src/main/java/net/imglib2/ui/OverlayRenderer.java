@@ -39,7 +39,7 @@ import java.awt.Graphics;
  * Draw something to a {@link Graphics} canvas and receive notifications about
  * changes of the canvas size.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public interface OverlayRenderer
 {

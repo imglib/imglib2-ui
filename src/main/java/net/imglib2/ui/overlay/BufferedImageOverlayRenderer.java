@@ -46,7 +46,7 @@ import net.imglib2.ui.RenderTarget;
  * canvas. It can be used as a {@link RenderTarget}, such that the
  * {@link BufferedImage} to draw is set by a {@link Renderer}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class BufferedImageOverlayRenderer implements OverlayRenderer, RenderTarget
 {

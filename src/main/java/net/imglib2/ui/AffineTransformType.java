@@ -48,7 +48,7 @@ import net.imglib2.realtransform.AffineTransform3D;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public interface AffineTransformType< A >
 {

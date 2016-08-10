@@ -46,7 +46,7 @@ import net.imglib2.ui.overlay.BufferedImageOverlayRenderer;
  * See {@link BufferedImageOverlayRenderer}, which is a {@link RenderTarget} and
  * also an {@link OverlayRenderer} that draws the {@link BufferedImage}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public interface RenderTarget
 {

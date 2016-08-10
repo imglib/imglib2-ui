@@ -55,7 +55,7 @@ import javax.swing.JComponent;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class InteractiveDisplayCanvasComponent< A > extends JComponent implements InteractiveDisplayCanvas< A >
 {

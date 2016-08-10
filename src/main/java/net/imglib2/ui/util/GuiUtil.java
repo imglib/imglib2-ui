@@ -51,7 +51,7 @@ import net.imglib2.display.screenimage.awt.ARGBScreenImage;
  * Static helper methods for setting up {@link GraphicsConfiguration} and
  * {@link BufferedImage BufferedImages}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class GuiUtil
 {

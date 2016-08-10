@@ -46,7 +46,7 @@ import java.awt.image.BufferedImage;
  * @param <A>
  *            viewer transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public interface Renderer< A >
 {

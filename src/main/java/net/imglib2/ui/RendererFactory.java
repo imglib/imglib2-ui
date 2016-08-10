@@ -45,7 +45,7 @@ import net.imglib2.realtransform.AffineSet;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public interface RendererFactory< A extends AffineSet & AffineGet & Concatenable< AffineGet > >
 {

@@ -46,7 +46,7 @@ import net.imglib2.realtransform.AffineTransform3D;
  * response to mouse and keyboard events.
  * 
  * @author Stephan Saalfeld
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class TransformEventHandler3D extends MouseAdapter implements KeyListener, TransformEventHandler< AffineTransform3D >
 {

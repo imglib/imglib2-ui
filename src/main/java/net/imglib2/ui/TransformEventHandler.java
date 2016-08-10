@@ -43,7 +43,7 @@ package net.imglib2.ui;
  * @param <A>
  *            type of transformation.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public interface TransformEventHandler< A >
 {

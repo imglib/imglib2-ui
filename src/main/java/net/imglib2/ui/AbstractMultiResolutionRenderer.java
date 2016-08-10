@@ -95,7 +95,7 @@ import net.imglib2.ui.util.GuiUtil;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  * @author Stephan Saalfeld
  */
 abstract public class AbstractMultiResolutionRenderer< A extends AffineSet & AffineGet & Concatenable< AffineGet > > extends AbstractRenderer< A >

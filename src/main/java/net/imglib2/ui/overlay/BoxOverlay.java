@@ -48,7 +48,7 @@ import net.imglib2.realtransform.AffineTransform3D;
  * that is shown in the viewer.
  * 
  * @author Stephan Saalfeld
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class BoxOverlay
 {

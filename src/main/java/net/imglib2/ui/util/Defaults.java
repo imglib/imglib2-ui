@@ -53,7 +53,7 @@ import net.imglib2.ui.viewer.InteractiveViewer3D;
  * {@link InteractiveViewer2D}, {@link InteractiveRealViewer2D},
  * {@link InteractiveViewer3D}, and {@link InteractiveRealViewer3D}.
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class Defaults
 {

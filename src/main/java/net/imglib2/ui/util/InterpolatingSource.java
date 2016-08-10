@@ -58,7 +58,7 @@ import net.imglib2.view.Views;
  * @param <A>
  *            transform type
  * 
- * @author Tobias Pietzsch <tobias.pietzsch@gmail.com>
+ * @author Tobias Pietzsch
  */
 public class InterpolatingSource< T extends NumericType< T >, A > implements RenderSource< T, A >
 {
