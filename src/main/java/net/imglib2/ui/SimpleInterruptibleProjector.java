@@ -33,9 +33,10 @@
  */
 package net.imglib2.ui;
 
+import java.util.ArrayList;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import net.imglib2.RandomAccess;
@@ -70,6 +71,8 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 	 */
 	final protected int numThreads;
 
+	final protected ExecutorService executorService;
+
 	/**
 	 * Time needed for rendering the last frame, in nano-seconds.
 	 */
@@ -78,7 +81,7 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 	/**
 	 * Create new projector with the given source and a converter from source to
 	 * target pixel type.
-	 * 
+	 *
 	 * @param source
 	 *            source pixels.
 	 * @param converter
@@ -94,9 +97,20 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 			final RandomAccessibleInterval< B > target,
 			final int numThreads )
 	{
+		this( source, converter, target, numThreads, null );
+	}
+
+	public SimpleInterruptibleProjector(
+			final RandomAccessible< A > source,
+			final Converter< ? super A, B > converter,
+			final RandomAccessibleInterval< B > target,
+			final int numThreads,
+			final ExecutorService executorService )
+	{
 		super( source.numDimensions(), converter, target );
 		this.source = source;
 		this.numThreads = numThreads;
+		this.executorService = executorService;
 		lastFrameRenderNanoTime = -1;
 	}
 
@@ -104,7 +118,7 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 	 * Render the 2D target image by copying values from the source. Source can
 	 * have more dimensions than the target. Target coordinate <em>(x,y)</em> is
 	 * copied from source coordinate <em>(x,y,0,...,0)</em>.
-	 * 
+	 *
 	 * @param target
 	 * @param numThreads
 	 *            how many threads to use for rendering.
@@ -129,7 +143,8 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 		final int width = ( int ) target.dimension( 0 );
 		final int height = ( int ) target.dimension( 1 );
 
-		final ExecutorService ex = Executors.newFixedThreadPool( numThreads );
+		final boolean createExecutor = ( executorService == null );
+		final ExecutorService ex = createExecutor ? Executors.newFixedThreadPool( numThreads ) : executorService;
 		final int numTasks;
 		if ( numThreads > 1 )
 		{
@@ -138,18 +153,19 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 		else
 			numTasks = 1;
 		final double taskHeight = ( double ) height / numTasks;
+		final ArrayList< Callable< Void > > tasks = new ArrayList<>( numTasks );
 		for ( int taskNum = 0; taskNum < numTasks; ++taskNum )
 		{
 			final long myMinY = min[ 1 ] + ( int ) ( taskNum * taskHeight );
 			final long myHeight = ( ( taskNum == numTasks - 1 ) ? height : ( int ) ( ( taskNum + 1 ) * taskHeight ) ) - myMinY - min[ 1 ];
 
-			final Runnable r = new Runnable()
+			final Callable< Void > r = new Callable< Void >()
 			{
 				@Override
-				public void run()
+				public Void call()
 				{
 					if ( interrupted.get() )
-						return;
+						return null;
 
 					final RandomAccess< A > sourceRandomAccess = source.randomAccess( SimpleInterruptibleProjector.this );
 					final RandomAccess< B > targetRandomAccess = target.randomAccess( target );
@@ -161,7 +177,7 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 					for ( int y = 0; y < myHeight; ++y )
 					{
 						if ( interrupted.get() )
-							return;
+							return null;
 						for ( int x = 0; x < width; ++x )
 						{
 							converter.convert( sourceRandomAccess.get(), targetRandomAccess.get() );
@@ -173,19 +189,21 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 						sourceRandomAccess.fwd( 1 );
 						targetRandomAccess.fwd( 1 );
 					}
+					return null;
 				}
 			};
-			ex.execute( r );
+			tasks.add( r );
 		}
-		ex.shutdown();
 		try
 		{
-			ex.awaitTermination( 1, TimeUnit.HOURS );
+			ex.invokeAll( tasks );
 		}
 		catch ( final InterruptedException e )
 		{
-			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
+		if ( createExecutor )
+			ex.shutdown();
 
 		lastFrameRenderNanoTime = stopWatch.nanoTime();
 
