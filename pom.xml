@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>net.imglib2</groupId>
 		<artifactId>pom-imglib2</artifactId>
-		<version>5.2.1</version>
+		<version>9.0.0</version>
 	</parent>
 
 	<artifactId>imglib2-ui</artifactId>
@@ -13,6 +13,25 @@
 
 	<name>ImgLib2 UI</name>
 	<description>Interactive image visualization using ImgLib2.</description>
+	<url>https://github.com/imglib/imglib2-ui</url>
+	<inceptionYear>2009</inceptionYear>
+	<organization>
+		<name>ImgLib2</name>
+		<url>http://imglib2.net/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Simplified BSD License</name>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<mailingLists>
+		<mailingList>
+			<name>ImageJ Forum</name>
+			<archive>http://forum.imagej.net/</archive>
+		</mailingList>
+	</mailingLists>
 
 	<scm>
 		<connection>scm:git:git://github.com/imglib/imglib2-ui</connection>
@@ -29,6 +48,53 @@
 		<url>http://jenkins.imagej.net/job/ImgLib2-UI/</url>
 	</ciManagement>
 
+	<developers>
+		<developer>
+			<id>tpietzsch</id>
+			<name>Tobias Pietzsch</name>
+			<url>http://imagej.net/User:Pietzsch</url>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>axtimwalde</id>
+			<name>Stephan Saalfeld</name>
+			<url>http://imagej.net/User:Saalfeld</url>
+			<roles>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>ctrueden</id>
+			<name>Curtis Rueden</name>
+			<url>http://imagej.net/User:Rueden</url>
+			<roles>
+				<role>developer</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+
+		<!-- Contributor list made by grep for javadoc author tags. Pleae add yourself if you should be here! -->
+
+		<contributor>
+			<name>empty</name>
+		</contributor>
+	</contributors>
+
 	<repositories>
 		<!-- NB: for SciJava dependencies -->
 		<repository>
@@ -36,6 +102,20 @@
 			<url>http://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
+
+	<properties>
+		<package-name>net.imglib2.ui</package-name>
+
+		<license.licenseName>bsd_2</license.licenseName>
+		<license.projectName>ImgLib2: a general-purpose, multidimensional image processing library.</license.projectName>
+		<license.organizationName>ImgLib2 authors</license.organizationName>
+		<license.copyrightOwners>Tobias Pietzsch, Stephan Preibisch, Stephan Saalfeld,
+John Bogovic, Albert Cardona, Barry DeZonia, Christian Dietz, Jan Funke,
+Aivar Grislis, Jonathan Hale, Grant Harris, Stefan Helfrich, Mark Hiner,
+Martin Horn, Steffen Jaensch, Lee Kamentsky, Larry Lindsey, Melissa Linkert,
+Mark Longair, Brian Northan, Nick Perry, Curtis Rueden, Johannes Schindelin,
+Jean-Yves Tinevez and Michael Zinsmaier.</license.copyrightOwners>
+	</properties>
 
 	<dependencies>
 		<!-- ImgLib2 dependencies -->
@@ -48,26 +128,11 @@
 			<artifactId>imglib2-realtransform</artifactId>
 		</dependency>
 
+		<!-- Test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<packageName>net.imglib2.ui</packageName>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
 </project>
