@@ -278,14 +278,14 @@ public class TransformEventHandler3D extends MouseAdapter implements KeyListener
 	 * Rotate by d radians around axis. Keep screen coordinates (
 	 * {@link #centerX}, {@link #centerY}) fixed.
 	 */
-	private void rotate( final int axis, final double d )
+	private void rotate( final int axisNo, final double d )
 	{
 		// center shift
 		affine.set( affine.get( 0, 3 ) - centerX, 0, 3 );
 		affine.set( affine.get( 1, 3 ) - centerY, 1, 3 );
 
 		// rotate
-		affine.rotate( axis, d );
+		affine.rotate( axisNo, d );
 
 		// center un-shift
 		affine.set( affine.get( 0, 3 ) + centerX, 0, 3 );

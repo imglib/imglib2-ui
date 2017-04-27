@@ -186,24 +186,26 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 	 * {@link Component#addMouseListener(MouseListener)},
 	 * {@link Component#addMouseMotionListener(MouseMotionListener)},
 	 * {@link Component#addMouseWheelListener(MouseWheelListener)}.
+	 * 
+	 * @param h handler to remove
 	 */
 	@Override
-	public void addHandler( final Object handler )
+	public void addHandler( final Object h )
 	{
-		if ( KeyListener.class.isInstance( handler ) )
-			addKeyListener( ( KeyListener ) handler );
+		if ( KeyListener.class.isInstance( h ) )
+			addKeyListener( ( KeyListener ) h );
 
-		if ( MouseMotionListener.class.isInstance( handler ) )
-			addMouseMotionListener( ( MouseMotionListener ) handler );
+		if ( MouseMotionListener.class.isInstance( h ) )
+			addMouseMotionListener( ( MouseMotionListener ) h );
 
-		if ( MouseListener.class.isInstance( handler ) )
-			addMouseListener( ( MouseListener ) handler );
+		if ( MouseListener.class.isInstance( h ) )
+			addMouseListener( ( MouseListener ) h );
 
-		if ( MouseWheelListener.class.isInstance( handler ) )
-			addMouseWheelListener( ( MouseWheelListener ) handler );
+		if ( MouseWheelListener.class.isInstance( h ) )
+			addMouseWheelListener( ( MouseWheelListener ) h );
 
-		if ( FocusListener.class.isInstance( handler ) )
-			addFocusListener( ( FocusListener ) handler );
+		if ( FocusListener.class.isInstance( h ) )
+			addFocusListener( ( FocusListener ) h );
 	}
 
 	/**
@@ -213,24 +215,26 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 	 * {@link Component#removeMouseListener(MouseListener)},
 	 * {@link Component#removeMouseMotionListener(MouseMotionListener)},
 	 * {@link Component#removeMouseWheelListener(MouseWheelListener)}.
+	 * 
+	 * @param h handler to remove
 	 */
 	@Override
-	public void removeHandler( final Object handler )
+	public void removeHandler( final Object h )
 	{
-		if ( KeyListener.class.isInstance( handler ) )
-			removeKeyListener( ( KeyListener ) handler );
+		if ( KeyListener.class.isInstance( h ) )
+			removeKeyListener( ( KeyListener ) h );
 
-		if ( MouseMotionListener.class.isInstance( handler ) )
-			removeMouseMotionListener( ( MouseMotionListener ) handler );
+		if ( MouseMotionListener.class.isInstance( h ) )
+			removeMouseMotionListener( ( MouseMotionListener ) h );
 
-		if ( MouseListener.class.isInstance( handler ) )
-			removeMouseListener( ( MouseListener ) handler );
+		if ( MouseListener.class.isInstance( h ) )
+			removeMouseListener( ( MouseListener ) h );
 
-		if ( MouseWheelListener.class.isInstance( handler ) )
-			removeMouseWheelListener( ( MouseWheelListener ) handler );
+		if ( MouseWheelListener.class.isInstance( h ) )
+			removeMouseWheelListener( ( MouseWheelListener ) h );
 
-		if ( FocusListener.class.isInstance( handler ) )
-			removeFocusListener( ( FocusListener ) handler );
+		if ( FocusListener.class.isInstance( h ) )
+			removeFocusListener( ( FocusListener ) h );
 	}
 
 	/**
