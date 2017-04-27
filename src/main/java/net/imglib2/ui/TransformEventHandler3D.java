@@ -33,6 +33,7 @@
  */
 package net.imglib2.ui;
 
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
@@ -203,9 +204,9 @@ public class TransformEventHandler3D extends MouseAdapter implements KeyListener
 	 */
 	private static double keyModfiedSpeed( final int modifiers )
 	{
-		if ( ( modifiers & KeyEvent.SHIFT_DOWN_MASK ) != 0 )
+		if ( ( modifiers & InputEvent.SHIFT_DOWN_MASK ) != 0 )
 			return 10;
-		else if ( ( modifiers & KeyEvent.CTRL_DOWN_MASK ) != 0 )
+		else if ( ( modifiers & InputEvent.CTRL_DOWN_MASK ) != 0 )
 			return 0.1;
 		else
 			return 1;
@@ -231,7 +232,7 @@ public class TransformEventHandler3D extends MouseAdapter implements KeyListener
 			final double dX = oX - e.getX();
 			final double dY = oY - e.getY();
 
-			if ( ( modifiers & MouseEvent.BUTTON1_DOWN_MASK ) != 0 ) // rotate
+			if ( ( modifiers & InputEvent.BUTTON1_DOWN_MASK ) != 0 ) // rotate
 			{
 				affine.set( affineDragStart );
 
@@ -248,7 +249,7 @@ public class TransformEventHandler3D extends MouseAdapter implements KeyListener
 				affine.set( affine.get( 1, 3 ) + oY, 1, 3 );
 				update();
 			}
-			else if ( ( modifiers & ( MouseEvent.BUTTON2_DOWN_MASK | MouseEvent.BUTTON3_DOWN_MASK ) ) != 0 ) // translate
+			else if ( ( modifiers & ( InputEvent.BUTTON2_DOWN_MASK | InputEvent.BUTTON3_DOWN_MASK ) ) != 0 ) // translate
 			{
 				affine.set( affineDragStart );
 
@@ -300,7 +301,7 @@ public class TransformEventHandler3D extends MouseAdapter implements KeyListener
 			final int modifiers = e.getModifiersEx();
 			final double v = keyModfiedSpeed( modifiers );
 			final int s = e.getWheelRotation();
-			if ( ( ( modifiers & KeyEvent.CTRL_DOWN_MASK ) != 0 && ( modifiers & KeyEvent.SHIFT_DOWN_MASK ) != 0 ) || ( modifiers & KeyEvent.META_DOWN_MASK ) != 0 )
+			if ( ( ( modifiers & InputEvent.CTRL_DOWN_MASK ) != 0 && ( modifiers & InputEvent.SHIFT_DOWN_MASK ) != 0 ) || ( modifiers & InputEvent.META_DOWN_MASK ) != 0 )
 			{
 				final double dScale = 1.0 + 0.05;
 				if ( s > 0 )
@@ -326,7 +327,7 @@ public class TransformEventHandler3D extends MouseAdapter implements KeyListener
 		synchronized ( affine )
 		{
 			final int keyCode = e.getKeyCode();
-			final int keyModifiers = e.getModifiersEx() & ( KeyEvent.SHIFT_DOWN_MASK | KeyEvent.ALT_DOWN_MASK | KeyEvent.ALT_GRAPH_DOWN_MASK | KeyEvent.CTRL_DOWN_MASK | KeyEvent.META_DOWN_MASK );
+			final int keyModifiers = e.getModifiersEx() & ( InputEvent.SHIFT_DOWN_MASK | InputEvent.ALT_DOWN_MASK | InputEvent.ALT_GRAPH_DOWN_MASK | InputEvent.CTRL_DOWN_MASK | InputEvent.META_DOWN_MASK );
 			final double v = keyModfiedSpeed( e.getModifiersEx() );
 			if ( keyCode == KeyEvent.VK_X && keyModifiers == 0 )
 			{

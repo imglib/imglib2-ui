@@ -41,6 +41,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import net.imglib2.concatenate.Concatenable;
 import net.imglib2.realtransform.AffineGet;
@@ -135,7 +136,7 @@ public class InteractiveRealViewer< A extends AffineSet & AffineGet & Concatenab
 		final Container content = frame.getContentPane();
 		content.add( display, BorderLayout.CENTER );
 		frame.pack();
-		frame.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
+		frame.setDefaultCloseOperation( WindowConstants.DISPOSE_ON_CLOSE );
 		frame.addWindowListener( new WindowAdapter()
 		{
 			@Override

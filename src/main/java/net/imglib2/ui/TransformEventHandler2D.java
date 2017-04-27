@@ -34,6 +34,7 @@
 
 package net.imglib2.ui;
 
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
@@ -193,9 +194,9 @@ public class TransformEventHandler2D extends MouseAdapter implements KeyListener
 	 */
 	private static double keyModfiedSpeed( final int modifiers )
 	{
-		if ( ( modifiers & KeyEvent.SHIFT_DOWN_MASK ) != 0 )
+		if ( ( modifiers & InputEvent.SHIFT_DOWN_MASK ) != 0 )
 			return 10;
-		else if ( ( modifiers & KeyEvent.CTRL_DOWN_MASK ) != 0 )
+		else if ( ( modifiers & InputEvent.CTRL_DOWN_MASK ) != 0 )
 			return 0.1;
 		else
 			return 1;
@@ -219,7 +220,7 @@ public class TransformEventHandler2D extends MouseAdapter implements KeyListener
 		{
 			final int modifiers = e.getModifiersEx();
 
-			if ( ( modifiers & MouseEvent.BUTTON1_DOWN_MASK ) != 0 ) // rotate
+			if ( ( modifiers & InputEvent.BUTTON1_DOWN_MASK ) != 0 ) // rotate
 			{
 				affine.set( affineDragStart );
 
@@ -231,7 +232,7 @@ public class TransformEventHandler2D extends MouseAdapter implements KeyListener
 
 				rotate( theta );
 			}
-			else if ( ( modifiers & ( MouseEvent.BUTTON2_DOWN_MASK | MouseEvent.BUTTON3_DOWN_MASK ) ) != 0 ) // translate
+			else if ( ( modifiers & ( InputEvent.BUTTON2_DOWN_MASK | InputEvent.BUTTON3_DOWN_MASK ) ) != 0 ) // translate
 			{
 				affine.set( affineDragStart );
 
