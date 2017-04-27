@@ -40,6 +40,8 @@ import java.awt.image.BufferedImage;
 
 import net.imglib2.ui.OverlayRenderer;
 import net.imglib2.ui.RenderTarget;
+import net.imglib2.ui.Renderer;
+import net.imglib2.ui.util.Defaults;
 
 /**
  * {@link OverlayRenderer} drawing a {@link BufferedImage}, scaled to fill the
@@ -50,11 +52,12 @@ import net.imglib2.ui.RenderTarget;
  */
 public class BufferedImageOverlayRenderer implements OverlayRenderer, RenderTarget
 {
+	
 	/**
 	 * The {@link BufferedImage} that is actually drawn on the canvas. Depending
-	 * on {@link #discardAlpha} this is either the {@link BufferedImage}
-	 * obtained from {@link #screenImage}, or {@link #screenImage}s buffer
-	 * re-wrapped using a RGB color model.
+	 * on {@link Defaults#discardAlpha} this is either the {@link BufferedImage}
+	 * obtained from screen image, or screen image's buffer re-wrapped using a RGB
+	 * color model.
 	 */
 	protected BufferedImage bufferedImage;
 

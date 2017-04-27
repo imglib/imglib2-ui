@@ -147,7 +147,7 @@ public class LogoPainter implements OverlayRenderer
 	 * Load the {@link #imgLib2Overlay} (the ImgLib2 logo). This assumes that
 	 * the image is RGBA.
 	 * 
-	 * @param overlayFilename
+	 * @param overlayUrl
 	 *            name of the image file
 	 * @return the loaded image or null if something went wrong.
 	 */

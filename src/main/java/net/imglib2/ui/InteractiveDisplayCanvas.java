@@ -62,12 +62,12 @@ import javax.swing.JComponent;
  */
 public interface InteractiveDisplayCanvas< A > extends TransformListener< A >
 {
+	
 	/**
-	 * Add an {@link OverlayRenderer} that draws on top of the current
-	 * {@link #bufferedImage}.
+	 * Add an {@link OverlayRenderer} that draws on top of the current buffered
+	 * image.
 	 * 
-	 * @param renderer
-	 *            overlay renderer to add.
+	 * @param renderer overlay renderer to add.
 	 */
 	public void addOverlayRenderer( final OverlayRenderer renderer );
 
@@ -127,8 +127,8 @@ public interface InteractiveDisplayCanvas< A > extends TransformListener< A >
 	 * Set the {@link TransformEventHandler} that handles mouse and key events
 	 * to update our view transform.
 	 * 
-	 * @param handles
-	 *            mouse and key events to update the view transform
+	 * @param transformEventHandler
+	 *            handler to use
 	 */
 	public void setTransformEventHandler( final TransformEventHandler< A > transformEventHandler );
 }

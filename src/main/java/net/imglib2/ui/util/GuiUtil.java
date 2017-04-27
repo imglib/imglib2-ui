@@ -108,7 +108,7 @@ public class GuiUtil
 
 	/**
 	 * Get a {@link BufferedImage} for the given {@link ARGBScreenImage}.
-	 * {@link #discardAlpha} determines whether to discard the
+	 * {@link Defaults#discardAlpha} determines whether to discard the
 	 * <code>screenImage</code> alpha components when drawing.
 	 * 
 	 * @param screenImage

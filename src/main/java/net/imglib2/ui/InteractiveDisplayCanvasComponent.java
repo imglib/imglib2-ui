@@ -72,8 +72,8 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 	final protected CopyOnWriteArrayList< TransformListener< A > > transformListeners;
 
 	/**
-	 * The {@link OverlayRenderer} that draws on top of the current
-	 * {@link #bufferedImage}.
+	 * The {@link OverlayRenderer} that draws on top of the current buffered
+	 * image.
 	 */
 	final protected CopyOnWriteArrayList< OverlayRenderer > overlayRenderers;
 
@@ -131,11 +131,10 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 	}
 
 	/**
-	 * Add an {@link OverlayRenderer} that draws on top of the current
-	 * {@link #bufferedImage}.
+	 * Add an {@link OverlayRenderer} that draws on top of the current buffered
+	 * image.
 	 * 
-	 * @param renderer
-	 *            overlay renderer to add.
+	 * @param renderer overlay renderer to add.
 	 */
 	@Override
 	public void addOverlayRenderer( final OverlayRenderer renderer )
@@ -250,8 +249,8 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 	 * Set the {@link TransformEventHandler} that handles mouse and key events
 	 * to update our view transform.
 	 * 
-	 * @param handles
-	 *            mouse and key events to update the view transform
+	 * @param transformEventHandler
+	 *            handler to use
 	 */
 	@Override
 	public synchronized void setTransformEventHandler( final TransformEventHandler< A > transformEventHandler )

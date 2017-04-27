@@ -119,9 +119,6 @@ public class SimpleInterruptibleProjector< A, B > extends AbstractInterruptibleP
 	 * have more dimensions than the target. Target coordinate <em>(x,y)</em> is
 	 * copied from source coordinate <em>(x,y,0,...,0)</em>.
 	 *
-	 * @param target
-	 * @param numThreads
-	 *            how many threads to use for rendering.
 	 * @return true if rendering was completed (all target pixels written).
 	 *         false if rendering was interrupted.
 	 */

@@ -61,17 +61,14 @@ import net.imglib2.ui.util.GuiUtil;
  * {@link InteractiveDisplayCanvas canvas}, and sets up transformation handling
  * and rendering.
  * <p>
- * It implements {@link PainterThread.Paintable} to handle {@link #paint()
- * repainting} through a {@link PainterThread}. It implements
+ * It implements {@link net.imglib2.ui.PainterThread.Paintable} to handle
+ * {@link #paint() repainting} through a {@link PainterThread}. It implements
  * {@link TransformListener} to be notified about viewer transformation changes
  * made by the user.
  * 
  * @author Tobias Pietzsch
- * 
- * @param <A>
- *            transform type
- * @param <C>
- *            canvas component type
+ * @param <A> transform type
+ * @param <C> canvas component type
  */
 public class InteractiveRealViewer< A extends AffineSet & AffineGet & Concatenable< AffineGet >, C extends JComponent & InteractiveDisplayCanvas< A > > implements TransformListener< A >, PainterThread.Paintable
 {
@@ -83,8 +80,7 @@ public class InteractiveRealViewer< A extends AffineSet & AffineGet & Concatenab
 	final protected A viewerTransform;
 
 	/**
-	 * Canvas used for displaying the rendered {@link #screenImages screen
-	 * image}.
+	 * Canvas used for displaying the rendered screen image.
 	 */
 	final protected C display;
 

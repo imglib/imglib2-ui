@@ -66,16 +66,14 @@ public interface RenderSource< T, A >
 	public RealRandomAccessible< T > getInterpolatedSource();
 
 	/**
-	 * Get the transform from the {@link #getSource(long) source} into the
-	 * global coordinate system.
+	 * Get the transform from the source into the global coordinate system.
 	 * 
 	 * @return transforms source into the global coordinate system.
 	 */
 	public A getSourceTransform();
 
 	/**
-	 * Get the {@link Converter} (converts {@link #source} type T to ARGBType
-	 * for display).
+	 * Get the {@link Converter} (converts source type T to ARGBType for display).
 	 */
 	public Converter< ? super T, ARGBType > getConverter();
 }

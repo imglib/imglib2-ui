@@ -50,17 +50,17 @@ import java.awt.image.BufferedImage;
  */
 public interface Renderer< A >
 {
+	
 	/**
 	 * Request a repaint of the display from the painter thread. The painter
-	 * thread will trigger a {@link #paint()} as soon as possible (that is,
-	 * immediately or after the currently running {@link #paint()} has
-	 * completed).
+	 * thread will trigger a paint as soon as possible (that is, immediately or
+	 * after the currently running paint has completed).
 	 * <p>
-	 * <em>All repaint request should be directed through here,
-	 * usually not to {@link PainterThread#requestRepaint()} directly</em>. The
-	 * reason for this is, that derived classes (i.e.,
-	 * {@link MultiResolutionRenderer}) may choose to cancel the on-going
-	 * rendering operation when a new repaint request comes in.
+	 * <em>All repaint request should be directed through here, usually not to
+	 * {@link PainterThread#requestRepaint()} directly</em>. The reason for this
+	 * is, that derived classes (i.e., {@link MultiResolutionRenderer}) may choose
+	 * to cancel the on-going rendering operation when a new repaint request comes
+	 * in.
 	 */
 	public void requestRepaint();
 

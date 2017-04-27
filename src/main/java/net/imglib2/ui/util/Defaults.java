@@ -42,6 +42,7 @@ import net.imglib2.realtransform.AffineSet;
 import net.imglib2.ui.AffineTransformType;
 import net.imglib2.ui.MultiResolutionRenderer;
 import net.imglib2.ui.RenderSource;
+import net.imglib2.ui.Renderer;
 import net.imglib2.ui.RendererFactory;
 import net.imglib2.ui.viewer.InteractiveRealViewer2D;
 import net.imglib2.ui.viewer.InteractiveRealViewer3D;

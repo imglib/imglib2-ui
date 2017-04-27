@@ -102,7 +102,7 @@ abstract public class AbstractMultiResolutionRenderer< A extends AffineSet & Aff
 {
 	/**
 	 * Currently active projector, used to re-paint the display. It maps the
-	 * {@link #source} data to {@link #screenImage}.
+	 * source data to screen image.
 	 */
 	protected InterruptibleProjector projector;
 
@@ -254,9 +254,8 @@ abstract public class AbstractMultiResolutionRenderer< A extends AffineSet & Aff
 
 	/**
 	 * Request a repaint of the display from the painter thread. The painter
-	 * thread will trigger a {@link #paint()} as soon as possible (that is,
-	 * immediately or after the currently running {@link #paint()} has
-	 * completed).
+	 * thread will trigger a paint as soon as possible (that is, immediately or
+	 * after the currently running paint has completed).
 	 */
 	public synchronized void requestRepaint( final int screenScaleIndex )
 	{

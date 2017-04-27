@@ -85,8 +85,8 @@ public class TransformEventHandler3D extends MouseAdapter implements KeyListener
 	protected double oX, oY;
 
 	/**
-	 * Current rotation axis for rotating with keyboard, indexed x->0, y->1,
-	 * z->2.
+	 * Current rotation axis for rotating with keyboard, indexed {@code x->0},
+	 * {@code y->1}, {@code z->2}.
 	 */
 	protected int axis = 0;
 

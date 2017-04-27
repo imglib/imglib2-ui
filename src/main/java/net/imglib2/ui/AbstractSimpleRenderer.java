@@ -59,7 +59,7 @@ public abstract class AbstractSimpleRenderer< A extends AffineGet & Concatenable
 {
 	/**
 	 * Currently active projector, used to re-paint the display. It maps the
-	 * source data to {@link #screenImage}.
+	 * source data to screen image.
 	 */
 	protected InterruptibleProjector projector;
 
@@ -90,8 +90,6 @@ public abstract class AbstractSimpleRenderer< A extends AffineGet & Concatenable
 	 *            which transformation type (e.g. {@link AffineTransformType2D
 	 *            affine 2d} or {@link AffineTransformType3D affine 3d}) is used
 	 *            for the source and viewer transforms.
-	 * @param source
-	 *            source data to be rendered.
 	 * @param display
 	 *            The canvas that will display the images we render.
 	 * @param painterThread
@@ -119,7 +117,7 @@ public abstract class AbstractSimpleRenderer< A extends AffineGet & Concatenable
 
 	/**
 	 * Check whether the size of the display component was changed and recreate
-	 * {@link #screenImages} and {@link #screenScaleTransforms} accordingly.
+	 * {@link #screenImages} and screen scale transforms accordingly.
 	 */
 	protected synchronized boolean checkResize()
 	{
