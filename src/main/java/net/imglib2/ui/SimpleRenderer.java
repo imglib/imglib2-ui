@@ -93,7 +93,7 @@ public class SimpleRenderer< A extends AffineGet & Concatenable< AffineGet > > e
 		@Override
 		public SimpleRenderer< A > create( final RenderTarget display, final PainterThread painterThread )
 		{
-			return new SimpleRenderer< A >( transformType, source, display, painterThread, doubleBuffered, numRenderingThreads );
+			return new SimpleRenderer< >( transformType, source, display, painterThread, doubleBuffered, numRenderingThreads );
 		}
 	}
 
@@ -144,7 +144,7 @@ public class SimpleRenderer< A extends AffineGet & Concatenable< AffineGet > > e
 			final ARGBScreenImage screenImage,
 			final int numRenderingThreads )
 	{
-		return new SimpleInterruptibleProjector< T, ARGBType >( getTransformedSource( transformType, source, viewerTransform ), source.getConverter(), screenImage, numRenderingThreads );
+		return new SimpleInterruptibleProjector< >( getTransformedSource( transformType, source, viewerTransform ), source.getConverter(), screenImage, numRenderingThreads );
 	}
 
 	protected static < T, A extends AffineGet & Concatenable< AffineGet > > RandomAccessible< T > getTransformedSource(

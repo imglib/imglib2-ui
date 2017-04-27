@@ -98,8 +98,8 @@ public class InteractiveDisplayCanvasComponent< A > extends JComponent implement
 		setPreferredSize( new Dimension( width, height ) );
 		setFocusable( true );
 
-		this.overlayRenderers = new CopyOnWriteArrayList< OverlayRenderer >();
-		this.transformListeners = new CopyOnWriteArrayList< TransformListener< A > >();
+		this.overlayRenderers = new CopyOnWriteArrayList< >();
+		this.transformListeners = new CopyOnWriteArrayList< >();
 
 		addComponentListener( new ComponentAdapter()
 		{

@@ -118,7 +118,7 @@ public class MultiResolutionRenderer< A extends AffineSet & AffineGet & Concaten
 		@Override
 		public AbstractRenderer< A > create( final RenderTarget display, final PainterThread painterThread )
 		{
-			return new MultiResolutionRenderer< A >( transformType, source, display, painterThread, screenScales, targetRenderNanos, doubleBuffered, numRenderingThreads );
+			return new MultiResolutionRenderer< >( transformType, source, display, painterThread, screenScales, targetRenderNanos, doubleBuffered, numRenderingThreads );
 		}
 	}
 
@@ -183,7 +183,7 @@ public class MultiResolutionRenderer< A extends AffineSet & AffineGet & Concaten
 			final ARGBScreenImage screenImage,
 			final int numRenderingThreads )
 	{
-		return new SimpleInterruptibleProjector< T, ARGBType >( getTransformedSource( transformType, source, viewerTransform, screenScaleTransform ), source.getConverter(), screenImage, numRenderingThreads );
+		return new SimpleInterruptibleProjector< >( getTransformedSource( transformType, source, viewerTransform, screenScaleTransform ), source.getConverter(), screenImage, numRenderingThreads );
 	}
 
 	protected static < T, A extends AffineGet & Concatenable< AffineGet > > RandomAccessible< T > getTransformedSource(

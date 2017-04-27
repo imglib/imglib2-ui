@@ -76,8 +76,8 @@ public class InteractiveRealViewer3D< T > extends InteractiveRealViewer< AffineT
 	public InteractiveRealViewer3D( final int width, final int height, final RealRandomAccessible< T > source, final Interval sourceInterval, final AffineTransform3D sourceTransform, final Converter< ? super T, ARGBType > converter )
 	{
 		super( AffineTransformType3D.instance,
-				new InteractiveDisplayCanvasComponent< AffineTransform3D >( width, height, TransformEventHandler3D.factory() ),
-				Defaults.rendererFactory( AffineTransformType3D.instance, new FinalSource< T, AffineTransform3D >( source, sourceTransform, converter ) ) );
+				new InteractiveDisplayCanvasComponent< >( width, height, TransformEventHandler3D.factory() ),
+				Defaults.rendererFactory( AffineTransformType3D.instance, new FinalSource< >( source, sourceTransform, converter ) ) );
 
 		final BoxOverlayRenderer box = new BoxOverlayRenderer( width, height );
 		box.setSource( sourceInterval, sourceTransform );

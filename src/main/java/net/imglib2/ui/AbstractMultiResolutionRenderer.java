@@ -228,11 +228,11 @@ abstract public class AbstractMultiResolutionRenderer< A extends AffineSet & Aff
 		this.screenScales = screenScales.clone();
 		this.doubleBuffered = doubleBuffered;
 		this.numRenderingThreads = numRenderingThreads;
-		renderIdQueue = new ArrayDeque< Integer >();
-		bufferedImageToRenderId = new HashMap< BufferedImage, Integer >();
+		renderIdQueue = new ArrayDeque< >();
+		bufferedImageToRenderId = new HashMap< >();
 		screenImages = new ARGBScreenImage[ screenScales.length ][ 3 ];
 		bufferedImages = new BufferedImage[ screenScales.length ][ 3 ];
-		screenScaleTransforms = new ArrayList< A >();
+		screenScaleTransforms = new ArrayList< >();
 		for ( int i = 0; i < screenScales.length; ++i )
 			screenScaleTransforms.add( transformType.createTransform() );
 		projector = null;

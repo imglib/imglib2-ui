@@ -77,7 +77,7 @@ public class InterpolatingSource< T extends NumericType< T >, A > implements Ren
 		if ( ARGBType.class.isInstance( source.randomAccess().get() ) )
 			nLinearInterpolatorFactory = ( InterpolatorFactory ) new NLinearInterpolatorARGBFactory();
 		else
-			nLinearInterpolatorFactory = new NLinearInterpolatorFactory< T >();
+			nLinearInterpolatorFactory = new NLinearInterpolatorFactory< >();
 
 		this.sourceTransform = sourceTransform;
 		this.converter = converter;

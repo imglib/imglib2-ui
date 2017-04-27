@@ -75,7 +75,7 @@ public class InteractiveViewer2D< T extends NumericType< T > > extends Interacti
 	 */
 	public InteractiveViewer2D( final int width, final int height, final RandomAccessible< T > source, final AffineTransform2D sourceTransform, final Converter< ? super T, ARGBType > converter )
 	{
-		this( width, height, new InterpolatingSource< T, AffineTransform2D >( source, sourceTransform, converter ) );
+		this( width, height, new InterpolatingSource< >( source, sourceTransform, converter ) );
 	}
 
 	public InteractiveViewer2D( final int width, final int height, final RandomAccessible< T > source, final Converter< ? super T, ARGBType > converter )
@@ -86,7 +86,7 @@ public class InteractiveViewer2D< T extends NumericType< T > > extends Interacti
 	public InteractiveViewer2D( final int width, final int height, final InterpolatingSource< T, AffineTransform2D > interpolatingSource )
 	{
 		super( AffineTransformType2D.instance,
-				new InteractiveDisplayCanvasComponent< AffineTransform2D >( width, height, TransformEventHandler2D.factory() ),
+				new InteractiveDisplayCanvasComponent< >( width, height, TransformEventHandler2D.factory() ),
 				Defaults.rendererFactory( AffineTransformType2D.instance, interpolatingSource ) );
 
 		// add KeyHandler for toggling interpolation

@@ -103,6 +103,6 @@ public class Defaults
 	 */
 	public static < A extends AffineSet & AffineGet & Concatenable< AffineGet > > RendererFactory< A > rendererFactory( final AffineTransformType< A > transformType, final RenderSource< ?, A > source )
 	{
-		return new MultiResolutionRenderer.Factory< A >( transformType, source, screenScales, targetRenderNanos, doubleBuffered, numRenderingThreads );
+		return new MultiResolutionRenderer.Factory< >( transformType, source, screenScales, targetRenderNanos, doubleBuffered, numRenderingThreads );
 	}
 }

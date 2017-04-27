@@ -79,7 +79,7 @@ public class InteractiveViewer3D< T extends NumericType< T > > extends Interacti
 	 */
 	public InteractiveViewer3D( final int width, final int height, final RandomAccessible< T > source, final Interval sourceInterval, final AffineTransform3D sourceTransform, final Converter< ? super T, ARGBType > converter )
 	{
-		this( width, height, new InterpolatingSource< T, AffineTransform3D >( source, sourceTransform, converter ), sourceInterval );
+		this( width, height, new InterpolatingSource< >( source, sourceTransform, converter ), sourceInterval );
 	}
 
 	public InteractiveViewer3D( final int width, final int height, final RandomAccessible< T > source, final Interval sourceInterval, final Converter< ? super T, ARGBType > converter )
@@ -90,7 +90,7 @@ public class InteractiveViewer3D< T extends NumericType< T > > extends Interacti
 	public InteractiveViewer3D( final int width, final int height, final InterpolatingSource< T, AffineTransform3D > interpolatingSource, final Interval sourceInterval )
 	{
 		super( AffineTransformType3D.instance,
-				new InteractiveDisplayCanvasComponent< AffineTransform3D >( width, height, TransformEventHandler3D.factory() ),
+				new InteractiveDisplayCanvasComponent< >( width, height, TransformEventHandler3D.factory() ),
 				Defaults.rendererFactory( AffineTransformType3D.instance, interpolatingSource ) );
 
 		final BoxOverlayRenderer box = new BoxOverlayRenderer( width, height );
