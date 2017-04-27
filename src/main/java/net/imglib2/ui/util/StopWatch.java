@@ -103,7 +103,6 @@ public class StopWatch
 	{
 		if ( running )
 			return total + safeNanos() - started;
-		else
-			return total;
+		return total;
 	}
 }

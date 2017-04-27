@@ -102,8 +102,7 @@ public class GuiUtil
 			final WritableRaster rgbRaster = Raster.createWritableRaster( sampleModel, dataBuffer, null );
 			return new BufferedImage( RGB_COLOR_MODEL, rgbRaster, false, null );
 		}
-		else
-			return si;
+		return si;
 	}
 
 	/**
