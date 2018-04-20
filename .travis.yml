@@ -1,10 +1,11 @@
 language: java
 jdk: oraclejdk8
 branches:
-  only: master
+  only:
+  - master
+  - "/.*-[0-9]+\\..*/"
 install: true
 script: ".travis/build.sh"
-env:
-  global:
-  - secure: i7MwEvZP/X7SOOqTOwxO4dVHP6loVQFzRWItTnbsQ+K4eVWocuLKZYKH9fG7ygkfK768rk78D6AJTVhfrdOedQ82z+NV+xiYmYIomBIA8Fbj232vNY7ZvHJnivbUpJLt97VeA7E68RREFfl/onORAEpNiSej+RlAZYV252EUI70=
-  - secure: fak8sxzi0e71qSyZ+EO1NAVa3+csmp7gdWXrQYobK1EnHaC+tSg4kAAaVK+i1kmxkAeiIKba+yC0wQCoZ458zMs3Q6PPkyYjsGV7CoC6yLdcEO9cP9lMpBOrwp0gZC+YaETIYk08LiKj3fd7mRvsEBoxjt6LJESFbaOvE/0U464=
+cache:
+  directories:
+  - "~/.m2/repository"
