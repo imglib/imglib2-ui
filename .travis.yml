@@ -9,3 +9,9 @@ script: ".travis/build.sh"
 cache:
   directories:
   - "~/.m2/repository"
+env:
+  global:
+  - secure: Nkiu3WJtemLD1GmCg4mw/mPimdOb7pvXC2RxUu1T1/XKEBD/ueMTWNGqDarTX8MXKJVIX5z4Ks3vBJvErwuq59Vz4CXsMwgZv1GRUvFaE7glywiOY0woP2NLJeLffu4AxrinOPW6UIvbJ/lE1bc7161TF+MKBOCFjFBchvxRves=
+  - secure: nAolKPYKgH1XogudW+6n/tASZrYGk9xBxJKrbYzABZwB29l7ajYdpSJzKdp8A3EkW3MRMLe+BuElLiaaOkL4YLuyDah3MPV4gQxnUQ2T1VZYO+VxZCzTk81NDNPGVDF1BS62W9ffKxuJ+QCQyQJxJ4bMbok2wGJFiUZzrQDltgM=
+  - secure: SX1HavJfJoi10hLuzeDretG1A1hj1kkYrYakpzgc5lx5EFFBknhxlgxX2kHdVOhW+0xtaryu4WzwILVRlHWfd2dp17FVeaq5I9cuSCEgFinNxqorh9W2vCASXvG0LOhzW3V/9qFqG41mpTKSubeEVMsrf7MUeorfJDtbKW+OaNE=
+  - secure: m7ZgqOCvG5OZxL/S7NB7/yW/lgGxIhPSVhJKadoFJ7+nrBl8pn5E7IV1oOXWl2HOvvy6I6sYPu87CAAIT0OCUHNTfoL+NlZaQxEreVdfWCOA/6cz8R9DLZLq/mHBrphoEdZP4daZi57mxmF3anJ4plEy0cTd8dq6/yf4AY/HwAc=
